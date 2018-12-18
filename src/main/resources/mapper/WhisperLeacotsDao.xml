@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="cn.mkp.dao.WhisperLeacotDao">	
+ 	<select id="getLeacotListByWhisperId" parameterType="Long" resultType="cn.mkp.entity.WhisperLeacot">
+ 		select * from whisper_leacots where whisper_id=#{whisperId}
+ 		order by create_time desc 
+ 	</select>
+ 	<insert id="saveWhisperLeacot" parameterType="cn.mkp.entity.WhisperLeacot">
+ 		insert into whisper_leacots 
+ 		values(null,#{whisperId},#{username},#{desc},null,#{createTime},#{updateTime})
+ 	</insert>
+ </mapper>

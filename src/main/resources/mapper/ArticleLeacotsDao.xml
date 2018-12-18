@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="cn.mkp.dao.ArticleLeacotsDao">	
+ 	<insert id="saveArticleLeacots" parameterType="cn.mkp.entity.ArticleLeacots">
+ 	<selectKey resultType="Long" order="AFTER" keyProperty="id">
+ 		SELECT LAST_INSERT_ID() AS id
+ 	</selectKey>
+ 		insert into article_leacots 
+ 		values(null,#{articleId},#{username},#{desc},#{pic},#{createTime},#{updateTime})
+ 	</insert>
+ 	<select id="getListByArticleId" parameterType="Long" resultType="cn.mkp.entity.ArticleLeacots">
+ 		select * from article_leacots where article_id=#{articleId}
+ 		order by create_time desc limit #{start},#{pageSize}
+ 	</select>
+ 	<select id="getList" parameterType="Long" resultType="cn.mkp.entity.ArticleLeacots">
+ 		select * from article_leacots where article_id=#{articleId}
+ 		order by create_time desc 
+ 	</select>
+ </mapper>

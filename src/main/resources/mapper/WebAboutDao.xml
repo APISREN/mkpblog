@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="cn.mkp.dao.WebAboutDao">	
+ 	<select id="getList"  resultType="cn.mkp.entity.WebAbout">
+ 		select * from web_about
+ 	</select>
+ 	<select id="getMySkillList"  resultType="cn.mkp.entity.MySkill">
+ 		select * from my_skill
+ 	</select>
+ </mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="cn.mkp.dao.WebArticleDao">	
+ 	<select id="getListBycategoryId" parameterType="Long" resultType="WebArticle">
+ 		select * from web_article 
+ 		 where category_id=#{categoryId} limit #{start},#{pageSize}
+ 	</select>
+ 	<select id="getList" parameterType="Long" resultType="WebArticle">
+ 		select * from web_article 
+ 		 where category_id=#{categoryId}
+ 	</select>
+ 	<select id="getTotal" parameterType="Long" resultType="Long">
+ 		select count(*) from web_article where category_id=#{categoryId}
+ 	</select>
+ 	<select id="getWebArticleById" parameterType="Long" resultType="WebArticle">
+ 		select * from web_article 
+ 		where id=#{contentId}
+ 	</select>
+ </mapper>

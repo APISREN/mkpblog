@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="cn.mkp.dao.WebArticleCateDao">	
+ 	<select id="getCategoryList" resultType="WebArticleCategory">
+ 		select * from web_article_category order by num asc
+ 	</select>
+ 	<select id="selectCategoryById" resultType="WebArticleCategory" parameterType="Long">
+ 		select * from web_article_category where id=#{id} 
+ 	</select>
+ </mapper>

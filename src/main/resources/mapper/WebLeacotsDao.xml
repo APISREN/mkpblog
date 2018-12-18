@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="cn.mkp.dao.WebLeacotsDao">	
+ 	<insert id="saveWebLeacots" parameterType="cn.mkp.entity.WebLeacots">
+ 		insert into web_leacots 
+ 		values(#{id},#{username},#{pic},#{desc},#{createTime},#{updateTime})
+ 	</insert>
+ 	<select id="getList" resultType="cn.mkp.entity.WebLeacots">
+ 		select * from web_leacots
+ 		order by create_time desc limit #{start},#{pageSize}
+ 	</select>
+ 	<select id="getTotal" resultType="Long">
+ 		select count(*) from web_leacots 
+ 	</select>
+ </mapper>
