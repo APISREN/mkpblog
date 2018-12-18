@@ -24,3 +24,21 @@
 		欢迎来到<span class="name">小穆</span>的博客~
 	</p>
 </div>
+<body>
+<script type="text/javascript" src="../res/js/jquery-1.5.1.min.js"></script> 
+	<script type="text/javascript">
+  			var urlstr = location.href;
+			var urlstatus=false;
+			$(".nav a").each(function () {
+			if ((urlstr + '/').indexOf($(this).attr('href')) > -1&&$(this).attr('href')!="") {
+				$(this).addClass('active'); 
+				urlstatus = true;
+			} else {
+				$(this).removeClass('active');
+			}
+		});
+			if (!urlstatus) {
+				$("#.nav a").eq(0).addClass('active'); 
+			}
+</script>
+</body>
